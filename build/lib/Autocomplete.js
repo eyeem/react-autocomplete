@@ -189,6 +189,7 @@ var Autocomplete = React.createClass({
   },
 
   maybeAutoCompleteText: function maybeAutoCompleteText() {
+    return;
     var _this4 = this;
 
     if (this.state.value === '') return;
