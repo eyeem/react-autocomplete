@@ -197,7 +197,7 @@ var Autocomplete = React.createClass({
     var items = this.getFilteredItems();
     if (items.length === 0) return;
 
-    this.setState({ highlightedIndex: 0 });
+    if (!highlightedIndex) this.setState({ highlightedIndex: 0 });
     return;
 
     var matchedItem = highlightedIndex !== null ? items[highlightedIndex] : items[0];
