@@ -189,7 +189,6 @@ var Autocomplete = React.createClass({
   },
 
   maybeAutoCompleteText: function maybeAutoCompleteText() {
-    return;
     var _this4 = this;
 
     if (this.state.value === '') return;
@@ -197,6 +196,10 @@ var Autocomplete = React.createClass({
 
     var items = this.getFilteredItems();
     if (items.length === 0) return;
+
+    this.setState({ highlightedIndex: 0 });
+    return;
+
     var matchedItem = highlightedIndex !== null ? items[highlightedIndex] : items[0];
     var itemValue = this.props.getItemValue(matchedItem);
     var itemValueDoesMatch = itemValue.toLowerCase().indexOf(this.state.value.toLowerCase()) === 0;
